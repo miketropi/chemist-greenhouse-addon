@@ -6,7 +6,7 @@
 add_action('wp_enqueue_scripts', 'CGA_enqueue_scripts');
 function CGA_enqueue_scripts() {
   wp_enqueue_style('cga-css', CGA_URI . '/dist/css/chemist-greenhouse-addon.bundle.css', false, CGA_VERSION);
-  wp_enqueue_script('cga-js', CGA_URI . '/dist/js/chemist-greenhouse-addon.bundle.js', ['jquery'], CGA_VERSION, true);
+  wp_enqueue_script('cga-js', CGA_URI . '/dist/chemist-greenhouse-addon.bundle.js', ['jquery'], CGA_VERSION, true);
 
   wp_localize_script('cga-js', 'CGA_PHP_DATA', [
     'ajax_url' => admin_url('admin-ajax.php'),
