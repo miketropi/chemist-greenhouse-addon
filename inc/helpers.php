@@ -3,6 +3,6 @@
  * Helpers 
  */
 
-function CGA_container_class() {
-  return get_field('cga_class_container', 'option');
+function CGA_container_class($string = '') {
+  return get_field('cga_class_container', 'options') . ' ' . $string;
 }

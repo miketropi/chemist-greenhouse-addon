@@ -3,9 +3,12 @@
  * Steps booking block
  */
 
+$block_id = $block['id'];
+$align_class = isset($block['align']) ? 'align' . $block['align'] : '';
+$class_wrap = ['cg-addon-block', basename(__FILE__, ".php") . '-block', $align_class];
 ?>
-<div class="cg-addon-block <?php echo basename(__FILE__, ".php") . '-block'; ?>">
+<div id="<?php echo $block_id; ?>" class="<?php echo implode(' ', $class_wrap); ?>">
   <div class="<?php echo CGA_container_class(); ?>">
-    <?php var_dump($block); ?>
+    <pre><?php print_r($block); ?></pre>
   </div>
 </div>
