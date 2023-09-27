@@ -32,5 +32,24 @@ require(CGA_DIR . '/inc/tempate-tags.php');
 require(CGA_DIR . '/inc/ajax.php');
 
 /**
+ * Load blocks
+ */
+require(CGA_DIR . '/inc/blocks/load.php');
+
+/**
+ * Admin Note
+ */
+function CGA_admin_notice_init() {
+	$class = 'notice notice-info';
+	$message = __( 'We\'re using ACF Pro to build Gutenberg Block, please install ACF Pro first. Thank you!', 'chemist-greenhouse-addon' );
+
+  if( ! class_exists('ACF') ) {
+    printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) );
+  }
+}
+
+add_action( 'admin_notices', 'CGA_admin_notice_init' );
+
+/**
  * Boot
  */
