@@ -1,18 +1,54 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/blocks/steps-booking.js":
+/*!*************************************!*\
+  !*** ./src/blocks/steps-booking.js ***!
+  \*************************************/
+/***/ (() => {
+
+;
+(function (w, $) {
+  'use strict';
+
+  var stepsBooking = function stepsBooking() {
+    $('.steps-booking-block').each(function () {
+      var $block = $(this);
+      $block.on('click', '.steps-booking__item .__btn-no', function (e) {
+        e.preventDefault();
+        $(this).siblings().css('display', 'none');
+        $block.find('.steps-booking__item.__item-index-2, .steps-booking__item.__item-index-3').removeClass('step-hidden');
+      });
+      $block.on('click', '.steps-booking__item .__btn-yes', function (e) {
+        e.preventDefault();
+        $(this).siblings().css('display', 'none');
+        $block.find('.steps-booking__item.__item-index-4').removeClass('step-hidden');
+      });
+    });
+  };
+  $(stepsBooking);
+})(window, jQuery);
+
+/***/ }),
+
 /***/ "./src/main.js":
 /*!*********************!*\
   !*** ./src/main.js ***!
   \*********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _blocks_steps_booking__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/steps-booking */ "./src/blocks/steps-booking.js");
+/* harmony import */ var _blocks_steps_booking__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_blocks_steps_booking__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * JS Script
  * 
  * @author Mike
  * @since 1.0.0
  */
+
+
 
 /***/ }),
 
@@ -101,6 +137,30 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 			}
 /******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
 /******/ 		};
 /******/ 	})();
 /******/ 	

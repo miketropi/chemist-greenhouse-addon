@@ -87,6 +87,40 @@
                 "delay": 0
             },
             {
+                "key": "field_6514e753f00a0",
+                "label": "Book Now URL",
+                "name": "book_now_url",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "#",
+                "placeholder": ""
+            },
+            {
+                "key": "field_6514e76af00a1",
+                "label": "Find a Store Url",
+                "name": "find_a_store_url",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "#",
+                "placeholder": ""
+            },
+            {
                 "key": "field_65144701948b7",
                 "label": "Padding Top",
                 "name": "padding_top",
@@ -125,6 +159,42 @@
                 "placeholder": "",
                 "prepend": "",
                 "append": ""
+            },
+            {
+                "key": "field_6514df88256ef",
+                "label": "Heading Color",
+                "name": "heading_color",
+                "aria-label": "",
+                "type": "color_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "#FFFFFF",
+                "enable_opacity": 0,
+                "return_format": "string"
+            },
+            {
+                "key": "field_6514df9f256f0",
+                "label": "Description Color",
+                "name": "description_color",
+                "aria-label": "",
+                "type": "color_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "#FFFFFF",
+                "enable_opacity": 0,
+                "return_format": "string"
             }
         ],
         "location": [

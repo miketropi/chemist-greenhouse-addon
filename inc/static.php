@@ -33,7 +33,9 @@ function CGA_style_inline() {
   ob_start();
   ?>
   :root {
-    --cga-container-width: <?php echo get_field('cga_container_width', 'option') ?>
+    --cga-container-width: <?php echo get_field('cga_container_width', 'option') ?>;
+    --cga-accent-color: #007341;
+    --cga-accent-color2: #D9D823;
   }
 
   <?php echo '.' . get_field('cga_class_container', 'option') ?> {
