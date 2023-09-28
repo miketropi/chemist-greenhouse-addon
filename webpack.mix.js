@@ -1,5 +1,7 @@
 const mix = require('laravel-mix');
-
+mix
+  .options({ processCssUrls: false })
+  
 mix
   .js('./src/main.js', './dist/chemist-greenhouse-addon.bundle.js')
   .sass('./src/scss/main.scss', 'css/chemist-greenhouse-addon.bundle.css')

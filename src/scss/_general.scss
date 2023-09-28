@@ -36,6 +36,12 @@ button.cga-button,
   text-align: center;
   min-width: 80px;
   cursor: pointer;
+  transition: .3s ease;
+  -webkit-transition: .3s ease;
+
+  &:hover {
+    opacity: .7;
+  }
 }
 
 .block-heading {
@@ -50,4 +56,32 @@ button.cga-button,
   p {
     color: var(--text-color);
   }
+}
+
+.cga-gmap-info-window {
+
+  h4 {
+    margin: 0;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    font-weight: bold;
+  }
+
+  p {
+    margin: 0 0 .5em
+  }
+
+  .cga-button-link {
+    margin-top: 1em;
+  }
+}
+
+a.cga-button-link,
+.cga-button-link {
+  display: inline-block;
+  font-weight: bold;
+  color: var(--cga-accent-color);
+  background: url('../../images/btn-next-arrow.png') no-repeat right center;
+  padding-right: 20px;
+  background-size: auto 95%;
 }

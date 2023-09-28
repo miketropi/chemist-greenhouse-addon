@@ -6,3 +6,4 @@
  */
 
 import './blocks/steps-booking';
+import './blocks/find-store-in-gmap';

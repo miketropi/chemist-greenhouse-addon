@@ -5,11 +5,20 @@
 
 add_action('wp_enqueue_scripts', 'CGA_enqueue_scripts');
 function CGA_enqueue_scripts() {
+  
+  # Plugin script
   wp_enqueue_style('cga-css', CGA_URI . '/dist/css/chemist-greenhouse-addon.bundle.css', false, CGA_VERSION);
   wp_enqueue_script('cga-js', CGA_URI . '/dist/chemist-greenhouse-addon.bundle.js', ['jquery'], CGA_VERSION, true);
 
+  # Google script
+  $GMAP_KEY = CGA_Gmap_key();
+  if(!empty($GMAP_KEY)) {
+    wp_enqueue_script('cga-google-script', 'https://maps.googleapis.com/maps/api/js?key='. $GMAP_KEY, ['cga-js'], CGA_VERSION);
+  }
+  
   wp_localize_script('cga-js', 'CGA_PHP_DATA', [
     'ajax_url' => admin_url('admin-ajax.php'),
+    'marker_icon' => CGA_URI . '/images/marker-icon.png',
     'lang' => []
   ]);
 
