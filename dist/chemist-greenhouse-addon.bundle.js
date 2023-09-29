@@ -8,6 +8,10 @@
 /***/ (() => {
 
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -125,6 +129,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 var marker = $(this).data().marker;
                 new google.maps.event.trigger(marker, 'click');
               });
+
+              // Searching 
+              $self.find('.store-seach-suggestion').on('change', function () {
+                var val = this.value;
+                var $found = $self.find(".store-nav-item[title*=\"".concat(val, "\"]"));
+                $found.first().trigger('click');
+              });
+
+              // toggle nav mobile 
+              $self.find('.our-stores__toggle-nav').on('click', function (e) {
+                e.preventDefault();
+                $self.find('.our-stores-gmap__nav').toggleClass('__show');
+              });
             });
           case 9:
           case "end":
@@ -136,24 +153,66 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return _ref2.apply(this, arguments);
     };
   }();
-  var getDistance = function getDistance() {
-    console.log(navigator);
+  var _getDistance = new Promise(function (resolve, reject) {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(function (position) {
         var _position$coords = position === null || position === void 0 ? void 0 : position.coords,
           latitude = _position$coords.latitude,
           longitude = _position$coords.longitude;
-        console.log(latitude, longitude);
+        resolve({
+          latitude: latitude,
+          longitude: longitude
+        });
       }, function (err) {
-        console.log(err);
+        reject(err);
       });
     } else {
-      // Geolocation is not supported by this browser
+      reject('Geolocation is not supported by this browser');
     }
+  });
+
+  /**
+   * Not useful
+   */
+  var cachingDistance = function cachingDistance(useLat, useLng, storeLat, storeLng) {
+    return {
+      set: function set(useLat, useLng, storeLat, storeLng, value) {
+        var __key = [useLat, useLng, storeLat, storeLng].join('_');
+        localStorage.setItem(__key, value);
+      },
+      get: function get(useLat, useLng, storeLat, storeLng) {
+        var __key = [useLat, useLng, storeLat, storeLng].join('_');
+        return localStorage.getItem(__key, value);
+      }
+    };
+  };
+  var calcDistance = function calcDistance() {
+    var $storeNav = $('.store-nav-item');
+    if ($storeNav.length == 0) return;
+    _getDistance.then(function (position) {
+      $storeNav.each(function () {
+        var $item = $(this);
+        var _$item$data$split = $item.data('latlng').split(','),
+          _$item$data$split2 = _slicedToArray(_$item$data$split, 2),
+          lat = _$item$data$split2[0],
+          lng = _$item$data$split2[1];
+        var service = new google.maps.DistanceMatrixService();
+        service.getDistanceMatrix({
+          origins: [new google.maps.LatLng(position.latitude, position.longitude)],
+          destinations: [new google.maps.LatLng(lat, lng)],
+          travelMode: 'DRIVING'
+        }, function (response, status) {
+          var _response$rows$0$elem;
+          if (status != 'OK') return;
+          var distanceText = response === null || response === void 0 || (_response$rows$0$elem = response.rows[0].elements[0]) === null || _response$rows$0$elem === void 0 ? void 0 : _response$rows$0$elem.distance.text;
+          $item.find('.distance').html(distanceText);
+        });
+      });
+    });
   };
   $(function () {
     OurStores();
-    getDistance();
+    calcDistance();
   });
 })(window, jQuery);
 

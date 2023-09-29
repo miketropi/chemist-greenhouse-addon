@@ -10,6 +10,7 @@ $class_wrap = ['cg-addon-block', $block_class, $align_class];
 
 $stores = CGA_get_stores();
 $marker_icon = CGA_URI . '/images/marker.png';
+$toggle_mobile_icon = CGA_URI . '/images/nav-icon-grid-svgrepo-com.svg';
 ?>
 <div 
   id="<?php echo $block_id; ?>" 
@@ -19,6 +20,24 @@ $marker_icon = CGA_URI . '/images/marker.png';
     <div class="block-inner">
       <?php if(count($stores) > 0) : ?>
       <h2 class="block-heading"><?php echo get_field('heading') ?></h2>
+
+      <div class="our-stores__tool">
+        <div class="our-stores__search-box">
+          <input type="text" list="store_suggestion_<?php echo $block_id; ?>" class="store-seach-suggestion" placeholder="<?php _e('Enter Postcode or Suburb', 'chemist-greenhouse-addon') ?>">
+          <datalist id="store_suggestion_<?php echo $block_id; ?>">
+            <?php foreach($stores as $index => $store) : ?>
+            <option value="<?php echo $store['gmap_location']['address']; ?>">
+            <?php endforeach; ?>
+          </datalist>
+        </div>
+
+        <button class="our-stores__toggle-nav">
+          <img 
+            src="<?php echo $toggle_mobile_icon; ?>" 
+            alt="<?php _e('toggle', 'chemist-greenhouse-addon') ?>">
+        </button>
+      </div> <!-- .our-stores__tool -->
+      
       <div class="our-stores-gmap">
         <div class="our-stores-gmap__map">
           <div class="__GMAP_HERE"></div> <!-- load by javascript -->
@@ -33,6 +52,7 @@ $marker_icon = CGA_URI . '/images/marker.png';
               </div>
               <div class="marker">
                 <img src="<?php echo $marker_icon; ?>" alt="<?php echo $store['name'] ?>">
+                <span class="distance"></span>
               </div>
             </li>
             <?php endforeach; ?>
