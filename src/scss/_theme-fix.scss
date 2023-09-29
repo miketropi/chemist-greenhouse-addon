@@ -1,0 +1,25 @@
+p {
+  font-family: 'Oswald';
+}
+
+.our-stores-gmap__nav .store-nav li.store-nav-item .marker .distance {
+  font-family: 'Oswald';
+}
+
+.our-stores-block .store-seach-suggestion {
+  width: 300px !important;
+  max-width: 100% !important;
+}
+
+.our-stores__toggle-nav {
+  background: none !important;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.our-stores-gmap__nav .store-nav li.store-nav-item .s-info h4,
+.cga-gmap-info-window h4 {
+  letter-spacing: 1px;
+}
