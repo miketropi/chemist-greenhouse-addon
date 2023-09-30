@@ -29,12 +29,29 @@ p {
   .gform_wrapper {
     padding: 0;
     width: 1082px;
-    max-width: 100%;
     background: #F1F1F1;
     border-radius: 10px;
-    max-width: initial !important;
+    max-width: 100% !important;
     padding: 3em 3em 2em;
     box-shadow: 0 0 20px -5px rgba(1, 1, 1, 0.5);
+
+    @media(max-width: 960px) {
+      .gfield.gfield--width-half {
+        grid-column: span 12 !important;
+      }
+
+      .gfield.gfield--width-quarter {
+        grid-column: span 6 !important;
+      }
+    }
+
+    @media(max-width: 610px) { 
+      .gfield.gfield--width-quarter {
+        grid-column: span 12 !important;
+      }
+
+      padding: 1.5em;
+    }
 
     .gform_title {
       text-align: center;
