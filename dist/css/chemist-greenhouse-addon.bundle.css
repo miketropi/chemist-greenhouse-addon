@@ -1,3 +1,102 @@
+p {
+  font-family: "Oswald";
+}
+
+.our-stores-gmap__nav .store-nav li.store-nav-item .marker .distance {
+  font-family: "Oswald";
+}
+
+.our-stores-block .store-seach-suggestion {
+  width: 300px !important;
+  max-width: 100% !important;
+}
+
+.our-stores__toggle-nav {
+  background: none !important;
+}
+.our-stores__toggle-nav:focus {
+  outline: none;
+}
+
+.our-stores-gmap__nav .store-nav li.store-nav-item .s-info h4,
+.cga-gmap-info-window h4 {
+  letter-spacing: 1px;
+}
+
+.container-gform .block-editor-block-list__block.wp-block {
+  max-width: none !important;
+}
+.container-gform .block-editor-block-list__block.wp-block .gform_wrapper {
+  margin: 0 auto;
+}
+.container-gform .gform_wrapper {
+  padding: 0;
+  width: 1082px;
+  background: #F1F1F1;
+  border-radius: 10px;
+  max-width: 100% !important;
+  padding: 3em 3em 2em;
+  box-shadow: 0 0 20px -5px rgba(1, 1, 1, 0.5);
+}
+@media (max-width: 960px) {
+  .container-gform .gform_wrapper .gfield.gfield--width-half {
+    grid-column: span 12 !important;
+  }
+  .container-gform .gform_wrapper .gfield.gfield--width-quarter {
+    grid-column: span 6 !important;
+  }
+}
+@media (max-width: 610px) {
+  .container-gform .gform_wrapper {
+    padding: 1.5em;
+  }
+  .container-gform .gform_wrapper .gfield.gfield--width-quarter {
+    grid-column: span 12 !important;
+  }
+}
+.container-gform .gform_wrapper .gform_title {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.container-gform .gform_wrapper .gfield_label {
+  font-weight: normal !important;
+}
+.container-gform .gform_wrapper input[type=text],
+.container-gform .gform_wrapper input[type=number],
+.container-gform .gform_wrapper input[type=tel],
+.container-gform .gform_wrapper input[type=email],
+.container-gform .gform_wrapper select {
+  border: solid 1px #CCE3D9;
+  border-radius: 8px;
+  background: #F1F1F1;
+}
+.container-gform .gform_wrapper .gform_footer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2em !important;
+}
+.container-gform .gform_wrapper button[type=submit],
+.container-gform .gform_wrapper input[type=submit] {
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 30px;
+  background: var(--cga-accent-color) !important;
+  color: white !important;
+  text-align: center;
+  min-width: 80px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  font-family: "OSWALD";
+}
+.container-gform .gform_wrapper button[type=submit]:hover,
+.container-gform .gform_wrapper input[type=submit]:hover {
+  opacity: 0.7;
+}
+
 .cga-zindex-1,
 .cga-zindex-2,
 .cga-zindex-3,
@@ -77,99 +176,6 @@ a.cga-button-link,
   background: url("../../images/btn-next-arrow.png") no-repeat right center;
   padding-right: 20px;
   background-size: auto 95%;
-}
-
-p {
-  font-family: "Oswald";
-}
-
-.our-stores-gmap__nav .store-nav li.store-nav-item .marker .distance {
-  font-family: "Oswald";
-}
-
-.our-stores-block .store-seach-suggestion {
-  width: 300px !important;
-  max-width: 100% !important;
-}
-
-.our-stores__toggle-nav {
-  background: none !important;
-}
-.our-stores__toggle-nav:focus {
-  outline: none;
-}
-
-.our-stores-gmap__nav .store-nav li.store-nav-item .s-info h4,
-.cga-gmap-info-window h4 {
-  letter-spacing: 1px;
-}
-
-.container-gform .gform_wrapper {
-  padding: 0;
-  width: 1082px;
-  background: #F1F1F1;
-  border-radius: 10px;
-  max-width: 100% !important;
-  padding: 3em 3em 2em;
-  box-shadow: 0 0 20px -5px rgba(1, 1, 1, 0.5);
-}
-@media (max-width: 960px) {
-  .container-gform .gform_wrapper .gfield.gfield--width-half {
-    grid-column: span 12 !important;
-  }
-  .container-gform .gform_wrapper .gfield.gfield--width-quarter {
-    grid-column: span 6 !important;
-  }
-}
-@media (max-width: 610px) {
-  .container-gform .gform_wrapper {
-    padding: 1.5em;
-  }
-  .container-gform .gform_wrapper .gfield.gfield--width-quarter {
-    grid-column: span 12 !important;
-  }
-}
-.container-gform .gform_wrapper .gform_title {
-  text-align: center;
-  margin-bottom: 1em;
-}
-.container-gform .gform_wrapper .gfield_label {
-  font-weight: normal !important;
-}
-.container-gform .gform_wrapper input[type=text],
-.container-gform .gform_wrapper input[type=number],
-.container-gform .gform_wrapper input[type=tel],
-.container-gform .gform_wrapper input[type=email],
-.container-gform .gform_wrapper select {
-  border: solid 1px #CCE3D9;
-  border-radius: 8px;
-  background: #F1F1F1;
-}
-.container-gform .gform_wrapper .gform_footer {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 2em !important;
-}
-.container-gform .gform_wrapper button[type=submit],
-.container-gform .gform_wrapper input[type=submit] {
-  text-decoration: none;
-  padding: 10px 30px;
-  border-radius: 30px;
-  background: var(--cga-accent-color) !important;
-  color: white !important;
-  text-align: center;
-  min-width: 80px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  -webkit-transition: 0.3s ease;
-  font-family: "OSWALD";
-}
-.container-gform .gform_wrapper button[type=submit]:hover,
-.container-gform .gform_wrapper input[type=submit]:hover {
-  opacity: 0.7;
 }
 
 /**

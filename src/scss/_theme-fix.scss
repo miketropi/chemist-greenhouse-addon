@@ -25,6 +25,13 @@ p {
 }
 
 .container-gform {
+  .block-editor-block-list__block.wp-block {
+    max-width: none !important;
+
+    .gform_wrapper {
+      margin: 0 auto;
+    }
+  }
 
   .gform_wrapper {
     padding: 0;
