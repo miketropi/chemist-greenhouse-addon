@@ -87,6 +87,10 @@
         border: solid 1px transparent;
         cursor: pointer;
 
+        &:hover {
+          border: solid 1px var(--cga-accent-color) !important;
+        }
+
         .s-info {
 
           h4 {

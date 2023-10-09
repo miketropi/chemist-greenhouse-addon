@@ -393,6 +393,9 @@ a.cga-button-link,
   border: solid 1px transparent;
   cursor: pointer;
 }
+.our-stores-gmap__nav .store-nav li.store-nav-item:hover {
+  border: solid 1px var(--cga-accent-color) !important;
+}
 .our-stores-gmap__nav .store-nav li.store-nav-item .s-info h4 {
   margin: 0;
   font-size: 1.3em;
