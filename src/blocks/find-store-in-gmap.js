@@ -136,9 +136,9 @@
             travelMode: 'DRIVING',
           }, (response, status) => {
             if(status != 'OK') return;
-            console.log(response);
-            let distanceText = response?.rows[0].elements[0]?.distance.text;
+            if(response?.rows[0].elements[0].status != 'OK') return;
             
+            let distanceText = response?.rows[0].elements[0]?.distance.text;
             $item.find('.distance').html(distanceText);
           }
         );
