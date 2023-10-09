@@ -128,6 +128,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 e.preventDefault();
                 var marker = $(this).data().marker;
                 new google.maps.event.trigger(marker, 'click');
+                $(this).addClass('cga-border-active').siblings().removeClass('cga-border-active');
               });
 
               // Searching 

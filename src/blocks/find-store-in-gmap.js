@@ -73,6 +73,8 @@
         e.preventDefault();
         const marker = $(this).data().marker;
         new google.maps.event.trigger(marker, 'click');
+
+        $(this).addClass('cga-border-active').siblings().removeClass('cga-border-active')
       })
 
       // Searching 

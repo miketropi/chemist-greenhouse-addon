@@ -87,3 +87,7 @@ a.cga-button-link,
   padding-right: 20px;
   background-size: auto 95%;
 }
+
+.cga-border-active {
+  border: solid 1px var(--cga-accent-color) !important;
+}

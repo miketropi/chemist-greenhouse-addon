@@ -178,6 +178,10 @@ a.cga-button-link,
   background-size: auto 95%;
 }
 
+.cga-border-active {
+  border: solid 1px var(--cga-accent-color) !important;
+}
+
 /**
  * Blocks 
  */
@@ -386,6 +390,7 @@ a.cga-button-link,
   padding: 0.8em 2em;
   box-shadow: 0 0 20px -5px rgba(1, 1, 1, 0.5);
   margin-bottom: 1.5em;
+  border: solid 1px transparent;
   cursor: pointer;
 }
 .our-stores-gmap__nav .store-nav li.store-nav-item .s-info h4 {
