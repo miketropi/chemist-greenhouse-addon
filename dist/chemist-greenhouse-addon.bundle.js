@@ -121,6 +121,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     anchor: marker,
                     map: map
                   });
+                  map.setCenter(marker.getPosition());
                 });
                 $self.find(".store-nav-item:nth-child(".concat(_index + 1, ")")).data('marker', marker);
               });

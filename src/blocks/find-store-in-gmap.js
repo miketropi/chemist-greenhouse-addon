@@ -64,6 +64,8 @@
             anchor: marker,
             map,
           });
+
+          map.setCenter(marker.getPosition());
         });
 
         $self.find(`.store-nav-item:nth-child(${ _index + 1 })`).data('marker', marker);
