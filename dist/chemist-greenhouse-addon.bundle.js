@@ -204,6 +204,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, function (response, status) {
           var _response$rows$0$elem;
           if (status != 'OK') return;
+          console.log(response);
           var distanceText = response === null || response === void 0 || (_response$rows$0$elem = response.rows[0].elements[0]) === null || _response$rows$0$elem === void 0 ? void 0 : _response$rows$0$elem.distance.text;
           $item.find('.distance').html(distanceText);
         });
